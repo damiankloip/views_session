@@ -1,0 +1,9 @@
+name = Views session
+description = Make data from the session table available in views.
+core = 7.x
+package = Views
+
+dependencies[] = views
+
+files[] = handlers/views_session_handler_field_session_data.inc
+files[] = handlers/views_session_handler_filter_current_sessions.inc
