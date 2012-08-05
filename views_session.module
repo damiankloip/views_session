@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Views session module file.
+ */
+
+/**
  * Implements hook_views_api().
  */
 function views_session_views_api() {
