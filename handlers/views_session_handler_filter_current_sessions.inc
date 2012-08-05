@@ -19,7 +19,7 @@ class views_session_handler_filter_current_sessions extends views_handler_filter
   function query() {
     $this->ensure_my_table();
 
-    if (!$this->value) {
+    if ($this->value == 0) {
       $subselect = db_select('sessions', 's');
       $subselect->addField('s', 'sid');
       $subselect->where("s.uid = users.uid");

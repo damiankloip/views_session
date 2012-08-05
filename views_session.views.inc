@@ -46,6 +46,19 @@ function views_session_views_data() {
     ),
   );
 
+  $data['sessions']['uid_exists'] = array(
+    'title' => t('User session status'),
+    'help' => t('Whether the user has a current session or not.'),
+    'real field' => 'uid',
+    'field' => array(
+      'handler' => 'views_handler_field_boolean',
+      'click sortable' => TRUE,
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+  );
+
   $data['sessions']['sid'] = array(
     'title' => t('Session ID'),
     'help' => t('The unique session ID'),
@@ -154,7 +167,8 @@ function views_session_views_data() {
       'numeric' => TRUE,
     ),
     'filter' => array(
-      'handler' => 'views_handler_filter_boolean',
+      'handler' => 'views_handler_filter_boolean_operator',
+      'type' => 'yes-no',
     ),
     'sort' => array(
       'handler' => 'views_handler_sort_boolean',
